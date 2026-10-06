@@ -1,69 +1,54 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const templates = [
+    { id: 1, name: "Template 1", link: "/templates/1" },
+    { id: 2, name: "Template 2", link: "/templates/2" },
+    { id: 3, name: "Template 3", link: "/templates/3" },
+    { id: 4, name: "Template 4", link: "/templates/4" },
+    { id: 5, name: "Template 5", link: "/templates/5" },
+    { id: 6, name: "Template 6", link: "/templates/6" },
+    { id: 7, name: "Template 7", link: "/templates/7" },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="min-h-screen bg-[#f8f5f0] text-[#222222] flex flex-col justify-between items-center px-4 py-12 sm:py-16">
+      {/* Header Section */}
+      <header className="text-center mt-4 sm:mt-8">
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1c1c1c]">
+          Elegant Wedding Invitations
+        </h1>
+        <p className="mt-3 text-[#666666] text-sm sm:text-base font-normal">
+          Choose your wedding invitation template
+        </p>
+      </header>
+
+      {/* Templates Grid Section */}
+      <main className="w-full max-w-5xl my-12 sm:my-14 flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-[1060px]">
+          {templates.map((template) => (
+            <div
+              key={template.id}
+              className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgb(0,0,0,0.09)] transition-all duration-200 flex flex-col items-center justify-center p-7 min-h-[160px]"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+              <h2 className="text-xl font-bold text-[#1f1f1f] mb-4 text-center">
+                {template.name}
+              </h2>
+              <Link
+                href={template.link}
+                className="bg-[#242424] hover:bg-[#111111] text-white text-xs sm:text-sm font-medium py-2 px-5 rounded-lg transition-colors duration-150 cursor-pointer shadow-sm active:scale-95"
+              >
+                View Invitation
+              </Link>
+            </div>
+          ))}
         </div>
       </main>
+
+      {/* Footer Section */}
+      <footer className="text-center text-xs sm:text-sm text-[#777777] pb-4">
+        <p>© Elegant Wedding Invitations</p>
+      </footer>
     </div>
   );
 }
