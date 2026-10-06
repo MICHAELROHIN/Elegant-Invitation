@@ -936,7 +936,7 @@ export default function Template1() {
                             </p>
                         </Reveal>
 
-                        <div className="relative left-1/2 my-4 h-[600px] w-[135vw] max-w-none -translate-x-1/2 sm:left-auto sm:h-[600px] sm:w-full sm:max-w-5xl sm:translate-x-0">
+                        <div className="relative left-1/2 my-4 flex h-[600px] w-[135vw] max-w-none -translate-x-1/2 justify-center sm:left-auto sm:mx-auto sm:h-[600px] sm:w-full sm:max-w-5xl sm:translate-x-0">
                             <CircularCarousel
                                 items={GALLERY_ITEMS}
                                 preset="cylinder"
@@ -1076,6 +1076,20 @@ export default function Template1() {
                             </div>
                         </div>
                     </section>
+
+                    {/* Digital Invitation Footer */}
+                    <footer className="bg-[#4c0519] px-6 py-8 text-center text-[#fff8f0]">
+                        <p className="font-cinzel text-md uppercase tracking-[0.2em] text-[#fbd149]">
+                            © Developed by Packcetra
+                        </p>
+                        <a
+                            href="tel:7305323544"
+                            className="mt-3 inline-block font-serif-display text-base italic text-[#fff8f0]/90 transition-colors hover:text-[#d4af37]"
+                        >
+                            Call - 7305323544 <br /> 
+                            If you&apos;re looking for Digital Invitation
+                        </a>
+                    </footer>
 
                     {/* Floating Wedding Song Player Button */}
                     {/* <button
